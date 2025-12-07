@@ -23,11 +23,11 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          title="Featured Projects"
-          subtitle="Some of my recent work"
+          title="My Projects"
+          subtitle="Here are some of the projects I’ve built and worked on"
         />
 
-        {/* Featured Projects Grid */}
+        {/* My Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6">
           {featuredProjects.map((project) => (
             <Card

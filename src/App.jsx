@@ -1,4 +1,4 @@
-// Main App component with routing configuration
+// App.jsx - Main App component with routing configuration
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -7,11 +7,16 @@ import ProjectsPage from "./components/pages/ProjectsPage";
 import BlogPage from "./components/pages/BlogPage";
 import ServicesPage from "./components/pages/ServicesPage";
 import ContactPage from "./components/pages/ContactPage";
+import ScrollToTop from "./components/ScrollToTop"; // import komponen scroll otomatis
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+
+      {/* ScrollToTop memastikan halaman otomatis ke atas saat ganti route */}
+      <ScrollToTop />
+
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -21,6 +26,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
   );

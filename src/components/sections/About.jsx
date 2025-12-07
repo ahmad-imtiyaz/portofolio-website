@@ -64,10 +64,10 @@ const About = () => {
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              Saat ini aku sering membangun aplikasi berbasis
+              Saat ini aku sering membangun aplikasi berbasis{" "}
               <strong>Laravel + MySQL</strong>, membuat API, mengatur
               autentikasi, dashboard admin, dan sistem CRUD kompleks. Aku juga
-              terus belajar front-end agar bisa menjadi
+              terus belajar front-end agar bisa menjadi{" "}
               <strong>full-stack yang solid</strong>.
             </p>
 

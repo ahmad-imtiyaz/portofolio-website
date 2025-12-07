@@ -13,7 +13,7 @@ export const projects = [
     technologies: ["Html", "Css", "Php", "Bootstrap", "MySQL"],
     liveUrl: "https://infolahtadip.com/",
     githubUrl: "https://github.com/ArasyAl475/Admin_Kodam",
-    category: "Web Development",
+    category: "Web & Landing Pages",
     featured: true,
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
     technologies: ["Laravel", "React", "TailwindCSS", "MySQL"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/ahmad-imtiyaz/supplier-selection-ahp",
-    category: "System",
+    category: "Decision / Enterprise Systems",
     featured: true,
   },
   {
@@ -45,7 +45,7 @@ export const projects = [
     technologies: ["Laravel", "TailwindCSS", "MySQL", "Vite", "Blade Template"],
     liveUrl: "https://mondigi-kbr.site/",
     githubUrl: "https://github.com/daniizzulhaq/app-kiss-kbr",
-    category: "Web Development",
+    category: "Internal & Management Systems",
     featured: true,
   },
   {
@@ -61,12 +61,12 @@ export const projects = [
     technologies: ["TypeScript", "React", "TailwindCSS", "JavaScript", "JSON"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/ahmad-imtiyaz/SmartCaf-/tree/master",
-    category: "Web Development",
+    category: "Web & Landing Pages",
     featured: false,
   },
   {
     id: 5,
-    title: "HIMA Information Systems Website",
+    title: "Website HIMA Sistem & Teknologi Informasi",
     description:
       "Web application to monitor members, events, and financial contributions with dual login functionality.",
     longDescription:
@@ -77,12 +77,12 @@ export const projects = [
     technologies: ["PHP", "Bootstrap", "HTML", "CSS", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/web-hima-sti",
-    category: "Web Development",
+    category: "Internal & Management Systems",
     featured: false,
   },
   {
     id: 6,
-    title: "Student Examination Evaluation System",
+    title: "School Academic Management System",
     description:
       "Web platform for managing student exams, tracking performance, and generating results.",
     longDescription:
@@ -93,12 +93,12 @@ export const projects = [
     technologies: ["PHP", "Bootstrap", "HTML", "CSS", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/web-sekolah-mandemak",
-    category: "Web Development",
+    category: "Internal & Management Systems",
     featured: false,
   },
   {
     id: 7,
-    title: "Hotel Room Booking System",
+    title: "Hotel Room Booking",
     description:
       "Web platform for managing hotel room bookings, staff roles, and daily operations.",
     longDescription:
@@ -109,12 +109,12 @@ export const projects = [
     technologies: ["Laravel", "Bootstrap", "Blade Template", "Vite"],
     liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/web-joki-hotel",
-    category: "System",
+    category: "Internal & Management Systems",
     featured: false,
   },
   {
     id: 8,
-    title: "Caffe SenjaAntariksa",
+    title: "Caffe Senja Antariksa",
     description:
       "Landing page website for a café showcasing simple menu offerings.",
     longDescription:
@@ -125,7 +125,23 @@ export const projects = [
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/senja-antariksa",
-    category: "Web Development",
+    category: "Web & Landing Pages",
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "Aset Kodam IV/Diponegoro",
+    description:
+      "Web platform for monitoring and managing assets with multi-role access for admins and users.",
+    longDescription:
+      "This Asset Management System for Kodam IV/Diponegoro is a web-based platform that allows admins to manage and monitor all organizational assets, including BMN data, Yardip assets, ownership rights, and reports. Admins can add, edit, or delete data, while regular users have view-only access. The system also allows exporting asset data to Excel and provides real-time monitoring accessible anytime and anywhere. It helps streamline asset management, improves transparency, and ensures accurate tracking of organizational property.",
+    image: "src/assets/images/project-9.png",
+    imageAlt:
+      "Dashboard showing asset management, maps, and ownership details for Kodam IV/Diponegoro",
+    technologies: ["Node.js", "React", "TailwindCSS", "JavaScript"],
+    liveUrl: "asetkodam.com",
+    githubUrl: "https://github.com/Farhanrahardian/Aset-Kodam-IV-Diponegoro",
+    category: "Internal & Management Systems",
     featured: false,
   },
 ];

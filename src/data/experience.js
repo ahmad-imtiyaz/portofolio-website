@@ -1,84 +1,43 @@
-// Professional experience and education history
-export const experience = [
-  {
-    id: 1,
-    type: "work",
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
-    description:
-      "Leading frontend development team, architecting scalable React applications, and mentoring junior developers. Implemented modern CI/CD pipelines and improved code quality standards.",
-    achievements: [
-      "Reduced page load time by 40% through code optimization",
-      "Led migration from JavaScript to TypeScript",
-      "Mentored 5 junior developers",
-    ],
-    logo: "src/assets/images/company-1.jpg",
-  },
-  {
-    id: 2,
-    type: "work",
-    title: "Full Stack Developer",
-    company: "Digital Solutions Co.",
-    location: "New York, NY",
-    period: "2020 - 2022",
-    description:
-      "Developed and maintained full-stack web applications using React, Node.js, and PostgreSQL. Collaborated with design and product teams to deliver high-quality features.",
-    achievements: [
-      "Built 10+ production-ready features",
-      "Improved API response time by 50%",
-      "Implemented automated testing suite",
-    ],
-    logo: "src/assets/images/company-2.jpg",
-  },
-  {
-    id: 3,
-    type: "work",
-    title: "Junior Web Developer",
-    company: "StartUp Studio",
-    location: "Austin, TX",
-    period: "2018 - 2020",
-    description:
-      "Started career building responsive websites and web applications. Gained experience in modern JavaScript frameworks and agile development methodologies.",
-    achievements: [
-      "Developed 15+ client websites",
-      "Learned React and modern JavaScript",
-      "Participated in code reviews and pair programming",
-    ],
-    logo: "src/assets/images/company-3.jpg",
-  },
-];
-
+// src/data/experience.js
 export const education = [
   {
     id: 1,
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of Technology",
-    location: "California",
-    period: "2014 - 2018",
+    degree: "Student of Science in Computer Science",
+    institution: "Universitas Ivet Semarang",
+    location: "Semarang, Indonesia",
+    period: "2023 - Present (Semester 5)",
     description:
-      "Focused on software engineering, web development, and database systems. Graduated with honors.",
+      "Focused on web development, especially building websites with Laravel. Actively involved in student organizations and academic projects.",
     achievements: [
-      "GPA: 3.8/4.0",
-      "Dean's List all semesters",
-      "Led university hackathon team",
+      "GPA: 3.95 / 4.00",
+      "Chairperson of HIMA Sistem & Teknologi Informasi",
+      "Active student in Laravel projects",
     ],
-    logo: "src/assets/images/university.jpg",
+    logo: "src/assets/logo/logounisvet.png",
+  },
+];
+
+export const internships = [
+  {
+    id: 1,
+    title: "Website Infolahta IV/Diponegoro",
+    company: "Kodam IV/Diponegoro",
+    location: "Semarang, Indonesia",
+    period: "2025 June - 2025 July",
+    description:
+      "Developed a dynamic profile website for Infolahta IV/Diponegoro using PHP, Bootstrap, and MySQL. Managed content such as history, building info, and articles via admin panel.",
+    achievements: ["Implemented real-time content management with admin panel"],
+    logo: "src/assets/logo/logo-kodam-diponegoro.png",
   },
   {
     id: 2,
-    degree: "Full Stack Web Development Bootcamp",
-    institution: "Code Academy",
-    location: "Online",
-    period: "2018",
+    title: "Aset Kodam IV/Diponegoro",
+    company: "Kodam IV/Diponegoro",
+    location: "Semarang, Indonesia",
+    period: "2025 August - 2025 September",
     description:
-      "Intensive 12-week program covering modern web development technologies including React, Node.js, and MongoDB.",
-    achievements: [
-      "Completed 500+ hours of coding",
-      "Built 10 full-stack projects",
-      "Graduated top of class",
-    ],
-    logo: "src/assets/images/bootcamp.jpg",
+      "Built an asset management platform with Node.js, React, and TailwindCSS. Provided multi-role access for admins and users, Excel export functionality, and real-time monitoring.",
+    achievements: ["Implemented asset tracking and multi-role user management"],
+    logo: "src/assets/logo/logo-kodam-diponegoro.png",
   },
 ];
