@@ -1,47 +1,44 @@
-// Technical skills organized by category
+// src/data/skills.js
+import phpIcon from "../assets/icons/php.ico";
+import jsIcon from "../assets/icons/javascript.ico";
+import sqlIcon from "../assets/icons/sql.ico";
+import htmlIcon from "../assets/icons/html.ico";
+import cssIcon from "../assets/icons/css.ico";
+
+import laravelIcon from "../assets/icons/laravel.ico";
+import reactIcon from "../assets/icons/react.ico";
+import mysqlIcon from "../assets/icons/mysql.ico";
+import gitIcon from "../assets/icons/git.ico";
+import githubIcon from "../assets/icons/github.ico";
+
+import pythonIcon from "../assets/icons/python.ico";
+
 export const skills = [
   {
-    category: "Frontend Development",
+    category: "Web Development",
     items: [
-      { name: "React", level: 95, icon: "⚛️" },
-      { name: "JavaScript/TypeScript", level: 90, icon: "📜" },
-      { name: "Tailwind CSS", level: 90, icon: "🎨" },
-      { name: "Next.js", level: 85, icon: "▲" },
-      { name: "HTML5/CSS3", level: 95, icon: "🌐" },
-      { name: "Redux", level: 80, icon: "🔄" },
+      { name: "PHP", icon: phpIcon },
+      { name: "JavaScript", icon: jsIcon },
+      { name: "SQL", icon: sqlIcon },
+      { name: "HTML", icon: htmlIcon },
+      { name: "CSS", icon: cssIcon },
     ],
   },
   {
-    category: "Backend Development",
+    category: "Frameworks & Tools",
     items: [
-      { name: "Node.js", level: 85, icon: "🟢" },
-      { name: "Python", level: 80, icon: "🐍" },
-      { name: "Express.js", level: 85, icon: "🚂" },
-      { name: "PostgreSQL", level: 75, icon: "🐘" },
-      { name: "MongoDB", level: 80, icon: "🍃" },
-      { name: "REST APIs", level: 90, icon: "🔌" },
+      { name: "Laravel", icon: laravelIcon },
+      { name: "React", icon: reactIcon },
+      { name: "MySQL", icon: mysqlIcon },
+      { name: "Git", icon: gitIcon },
+      { name: "GitHub", icon: githubIcon },
     ],
   },
   {
-    category: "DevOps & Tools",
+    category: "Programming Languages",
     items: [
-      { name: "Git/GitHub", level: 90, icon: "📦" },
-      { name: "Docker", level: 75, icon: "🐳" },
-      { name: "AWS", level: 70, icon: "☁️" },
-      { name: "CI/CD", level: 75, icon: "🔄" },
-      { name: "Netlify/Vercel", level: 85, icon: "🚀" },
-      { name: "Linux", level: 70, icon: "🐧" },
-    ],
-  },
-  {
-    category: "Design & Others",
-    items: [
-      { name: "Figma", level: 80, icon: "🎨" },
-      { name: "UI/UX Design", level: 75, icon: "✨" },
-      { name: "Responsive Design", level: 95, icon: "📱" },
-      { name: "Agile/Scrum", level: 80, icon: "🏃" },
-      { name: "Testing (Jest)", level: 75, icon: "🧪" },
-      { name: "Webpack/Vite", level: 80, icon: "📦" },
+      { name: "Python", icon: pythonIcon },
+      { name: "PHP", icon: phpIcon },
     ],
   },
 ];
