@@ -1,5 +1,5 @@
 // Reusable card component with hover effects and dark mode support
-const Card = ({ children, className = "", hover = true }) => {
+const Card = ({ children, className = "", hover = true, ...props }) => {
   return (
     <div
       className={`
@@ -12,6 +12,7 @@ const Card = ({ children, className = "", hover = true }) => {
         }
         ${className}
       `}
+      {...props} // <- penting supaya onClick berfungsi
     >
       {children}
     </div>
