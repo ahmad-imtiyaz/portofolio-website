@@ -2,7 +2,7 @@
 export const education = [
   {
     id: 1,
-    degree: "Student of Science in Computer Science",
+    degree: "Information Systems and Technology Major",
     institution: "Universitas Ivet Semarang",
     location: "Semarang, Indonesia",
     period: "2023 - Present (Semester 5)",
