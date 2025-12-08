@@ -34,7 +34,8 @@ const About = () => {
           {/* Image */}
           <div className="relative">
             <img
-              src="src/assets/images/about-photo.jpg"
+              src="public/images/about-photo.jpg
+"
               alt="Ahmad Imtiyaz – backend developer working on laptop"
               className="rounded-2xl shadow-2xl w-full object-cover"
             />
