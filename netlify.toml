@@ -1,13 +1,11 @@
-﻿# Netlify deployment configuration
-[build]
+﻿[build]
   command = "npm run build"
   publish = "dist"
 
-# Redirect all routes to index.html (for React Router)
+[build.environment]
+  NODE_VERSION = "18"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[build.environment]
-  NODE_VERSION = "18"
