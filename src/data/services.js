@@ -6,7 +6,7 @@ export const services = [
     description:
       "Custom web applications built with modern frameworks like React, Next.js, and Vue.js. Scalable, performant, and user-friendly solutions tailored to your business needs.",
     icon: "💻",
-    image: "src/assets/images/service-web.jpg",
+    image: "/images/service-web.jpg",
     imageAlt: "Modern web application interface on multiple devices",
     features: [
       "Single Page Applications (SPA)",
@@ -23,7 +23,7 @@ export const services = [
     description:
       "Cross-platform mobile applications using React Native and Expo. Build once, deploy to iOS and Android with native performance and smooth user experience.",
     icon: "📱",
-    image: "src/assets/images/service-mobile.jpg",
+    image: "/images/service-mobile.jpg",
     imageAlt: "Mobile app running on iOS and Android devices",
     features: [
       "iOS & Android Apps",
@@ -40,7 +40,7 @@ export const services = [
     description:
       "User-centered design that combines aesthetics with functionality. From wireframes to high-fidelity prototypes, creating interfaces that users love.",
     icon: "🎨",
-    image: "src/assets/images/service-design.jpg",
+    image: "/images/service-design.jpg",
     imageAlt: "UI/UX design mockups and prototypes on design board",
     features: [
       "User Research",
@@ -57,7 +57,7 @@ export const services = [
     description:
       "Complete e-commerce platforms with shopping carts, payment gateways, inventory management, and analytics. Turn your store into a revenue machine.",
     icon: "🛒",
-    image: "src/assets/images/service-ecommerce.jpg",
+    image: "/images/service-ecommerce.jpg",
     imageAlt: "E-commerce storefront with product catalog and checkout",
     features: [
       "Shopping Cart Integration",
@@ -74,7 +74,7 @@ export const services = [
     description:
       "RESTful and GraphQL APIs built with Node.js, Express, and modern database systems. Secure, scalable, and well-documented backend solutions.",
     icon: "🔌",
-    image: "src/assets/images/service-api.jpg",
+    image: "/images/service-api.jpg",
     imageAlt: "API documentation and endpoint testing interface",
     features: [
       "RESTful API Design",
@@ -91,7 +91,7 @@ export const services = [
     description:
       "Technical consulting, architecture planning, and code review services. Get expert advice on best practices, performance optimization, and scalability.",
     icon: "💡",
-    image: "src/assets/images/service-consulting.jpg",
+    image: "/images/service-consulting.jpg",
     imageAlt: "Technical consultation session with code review on screen",
     features: [
       "Architecture Review",

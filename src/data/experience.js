@@ -13,7 +13,7 @@ export const education = [
       "Chairperson of HIMA Sistem & Teknologi Informasi",
       "Active student in Laravel projects",
     ],
-    logo: "src/assets/logo/logounisvet.png",
+    logo: "/logo/logounisvet.png",
   },
 ];
 
@@ -27,7 +27,7 @@ export const internships = [
     description:
       "Developed a dynamic profile website for Infolahta IV/Diponegoro using PHP, Bootstrap, and MySQL. Managed content such as history, building info, and articles via admin panel.",
     achievements: ["Implemented real-time content management with admin panel"],
-    logo: "src/assets/logo/logo-kodam-diponegoro.png",
+    logo: "/logo/logo-kodam-diponegoro.png",
   },
   {
     id: 2,
@@ -38,6 +38,6 @@ export const internships = [
     description:
       "Built an asset management platform with Node.js, React, and TailwindCSS. Provided multi-role access for admins and users, Excel export functionality, and real-time monitoring.",
     achievements: ["Implemented asset tracking and multi-role user management"],
-    logo: "src/assets/logo/logo-kodam-diponegoro.png",
+    logo: "/logo/logo-kodam-diponegoro.png",
   },
 ];
