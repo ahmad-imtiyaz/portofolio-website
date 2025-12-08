@@ -5,7 +5,7 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Experience from "../sections/Experience";
 import TechTimeline from "../sections/TechTimeline";
-import Testimonials from "../sections/Testimonials";
+import Testimonials from "../sections/Certificates";
 import LiveActivity from "../sections/LiveActivity";
 import Contact from "../sections/Contact";
 

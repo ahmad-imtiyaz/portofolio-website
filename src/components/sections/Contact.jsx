@@ -28,11 +28,15 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      text: "your.email@example.com",
-      href: "mailto:your.email@example.com",
+      text: "imtiyaznajih8@gmail.com",
+      href: "mailto:imtiyaznajih8@gmail.com",
     },
     { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, text: "San Francisco, CA", href: "#" },
+    {
+      icon: MapPin,
+      text: "Semarang, Gajah Mungkur",
+      href: "https://maps.app.goo.gl/4UpgLThHRvvtVHNH9",
+    },
   ];
 
   return (
@@ -101,7 +105,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="John Doe"
+                  placeholder="Little Salsaurus"
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 
                              dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 
                              focus:border-transparent transition-colors outline-none"
@@ -119,7 +123,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="john@example.com"
+                  placeholder="salsaurus@gmail.com"
                   className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 
                              dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 
                              focus:border-transparent transition-colors outline-none"
