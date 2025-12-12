@@ -46,7 +46,7 @@ export const projects = [
     liveUrl: "https://mondigi-kbr.site/",
     githubUrl: "https://github.com/daniizzulhaq/app-kiss-kbr",
     category: "Internal & Management Systems",
-    featured: true,
+    featured: false,
   },
   {
     id: 4,
@@ -123,7 +123,7 @@ export const projects = [
     imageAlt:
       "Landing page of Caffe SenjaAntariksa showing café menu and offerings",
     technologies: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
+    liveUrl: "https://ahmad-imtiyaz.github.io/senja-antariksa/",
     githubUrl: "https://github.com/ahmad-imtiyaz/senja-antariksa",
     category: "Web & Landing Pages",
     featured: false,
@@ -143,5 +143,21 @@ export const projects = [
     githubUrl: "https://github.com/Farhanrahardian/Aset-Kodam-IV-Diponegoro",
     category: "Internal & Management Systems",
     featured: false,
+  },
+  {
+    id: 10,
+    title: "ASTRA – Advanced Skills Training for Rising Achievers",
+    description:
+      "Educational web platform designed to introduce students to modern digital skills such as programming, networking, design, and digital literacy.",
+    longDescription:
+      "ASTRA (Advanced Skills Training for Rising Achievers) adalah platform edukasi yang dibuat untuk membantu sekolah membangun generasi siswa yang tidak hanya mampu menggunakan teknologi, tetapi juga menguasainya. Program ini menyediakan materi pembelajaran digital, modul interaktif, dan sistem manajemen pelatihan untuk memperkenalkan siswa pada keterampilan teknologi seperti pemrograman, desain, jaringan, literasi digital, serta pemanfaatan internet secara produktif.\n\nMelalui filosofi ‘rising achievers’, ASTRA lahir dari kebutuhan untuk membuka akses belajar teknologi bagi siswa yang memiliki potensi besar namun minim kesempatan. Website ini membantu sekolah menghadirkan pelatihan terstruktur, meningkatkan kemampuan adaptasi siswa terhadap era digital, serta mendorong kreativitas dan inovasi.\n\nDengan ASTRA, siswa diharapkan dapat melihat teknologi sebagai peluang untuk menciptakan masa depan mereka sendiri. Platform ini dirancang untuk membangun generasi yang percaya diri, kritis, kreatif, dan siap bersaing di dunia modern.",
+    image: "/images/project-10.png",
+    imageAlt:
+      "ASTRA web dashboard showing educational modules, digital skill courses, and student progress tracking",
+    technologies: ["React", "TailwindCSS", "JavaScript"],
+    liveUrl: "https://progam-astra.netlify.app/",
+    githubUrl: "https://github.com/ahmad-imtiyaz/ASTRA",
+    category: "Web & Landing Pages",
+    featured: true,
   },
 ];
