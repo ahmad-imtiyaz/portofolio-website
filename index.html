@@ -11,6 +11,21 @@
     <title>Developer Portfolio | Ahmad Imtiyaz Najih</title>
   </head>
   <body>
+    <!-- Netlify Hidden Form (WAJIB untuk React / SPA) -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
