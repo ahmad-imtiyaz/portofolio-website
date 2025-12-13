@@ -130,42 +130,6 @@ const LiveActivity = () => {
             />
           </div>
         </Card>
-
-        {/* GitHub Contribution (SVG – Real Data) */}
-        <Card className="p-8">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-            <Activity className="w-6 h-6 mr-2 text-primary-600" />
-            GitHub Contributions (Last Year)
-          </h3>
-
-          {/* Wrapper for smooth dark mode */}
-          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl">
-            <div className="w-full overflow-x-auto">
-              <img
-                src="https://ghchart.rshah.org/ahmad-imtiyaz"
-                alt="GitHub Contribution Chart"
-                className="w-full min-w-[700px] rounded-lg"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          {/* Footer + CTA */}
-          <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Data sourced directly from GitHub • Updated automatically
-            </p>
-
-            <a
-              href="https://github.com/ahmad-imtiyaz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline font-medium"
-            >
-              View GitHub Profile →
-            </a>
-          </div>
-        </Card>
       </div>
     </section>
   );
