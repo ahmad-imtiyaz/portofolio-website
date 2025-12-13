@@ -34,25 +34,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/yourusername",
+      href: "https://github.com/ahmad-imtiyaz",
       label: "GitHub",
       color: "hover:bg-gray-800 dark:hover:bg-gray-600",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/in/ahmad-imtiyaz-3531532b5/",
       label: "LinkedIn",
       color: "hover:bg-blue-600",
     },
     {
-      icon: Twitter,
-      href: "https://twitter.com/yourusername",
-      label: "Twitter",
-      color: "hover:bg-sky-500",
-    },
-    {
       icon: Mail,
-      href: "mailto:your.email@example.com",
+      href: "mailto:imtiyaznajih8@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Imtiyaz,%0A%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20discuss...",
       label: "Email",
       color: "hover:bg-red-500",
     },
@@ -84,7 +78,7 @@ const Footer = () => {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("your.email@example.com");
+    navigator.clipboard.writeText("imtiyaznajih8@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -112,8 +106,9 @@ const Footer = () => {
               </h3>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-              Building exceptional digital experiences with modern technologies
-              and creative solutions.
+              Junior Web Developer passionate about building functional web
+              systems Available for learning, collaboration, and real-world
+              projects.
             </p>
 
             {/* Social Links */}
