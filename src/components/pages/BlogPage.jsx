@@ -3,6 +3,7 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import SectionTitle from "../common/SectionTitle";
 import Card from "../common/Card";
 import { blogPosts } from "../../data/blog";
+import BackToTop from "../common/BackToTop";
 
 const BlogPage = () => {
   return (
@@ -80,6 +81,7 @@ const BlogPage = () => {
           ))}
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 };

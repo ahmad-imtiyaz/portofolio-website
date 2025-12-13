@@ -3,6 +3,7 @@ import { ExternalLink, Github, X } from "lucide-react";
 import SectionTitle from "../common/SectionTitle";
 import Card from "../common/Card";
 import { projects } from "../../data/projects";
+import BackToTop from "../common/BackToTop";
 
 const ProjectsPage = () => {
   const [filter, setFilter] = useState("All");
@@ -175,6 +176,7 @@ const ProjectsPage = () => {
           </div>
         </div>
       )}
+      <BackToTop />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import TechTimeline from "../sections/TechTimeline";
 import Testimonials from "../sections/Certificates";
 import LiveActivity from "../sections/LiveActivity";
 import Contact from "../sections/Contact";
+import BackToTop from "../common/BackToTop";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage = () => {
       <Testimonials />
       <LiveActivity />
       <Contact />
+      <BackToTop />
     </>
   );
 };

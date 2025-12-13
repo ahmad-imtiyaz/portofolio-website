@@ -237,20 +237,6 @@ const Footer = () => {
               <Heart className="w-4 h-4 mx-1 text-red-500 fill-current animate-pulse" />
               by YAZNA © {currentYear}. All rights reserved.
             </p>
-
-            {/* Back to Top */}
-            <button
-              onClick={scrollToTop}
-              className="group flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-all shadow-sm hover:shadow-md"
-            >
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Back to Top
-              </span>
-              <ArrowUp
-                size={16}
-                className="text-primary-600 dark:text-primary-400 group-hover:-translate-y-1 transition-transform"
-              />
-            </button>
           </div>
         </div>
       </div>

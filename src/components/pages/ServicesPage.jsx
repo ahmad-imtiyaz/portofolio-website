@@ -1,4 +1,5 @@
 import { Instagram, Globe, Mail, MessageCircle } from "lucide-react";
+import BackToTop from "../common/BackToTop";
 
 const ServicesPage = () => {
   return (
@@ -223,6 +224,7 @@ transform transition duration-300 hover:scale-105 md:col-span-2"
           </div>
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 };
