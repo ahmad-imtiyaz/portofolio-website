@@ -65,10 +65,15 @@ const BlogPage = () => {
                     ))}
                   </div>
 
-                  <button className="flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:underline font-medium">
+                  <a
+                    href={post.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:underline font-medium"
+                  >
                     <span>Read More</span>
                     <ArrowRight size={18} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </Card>

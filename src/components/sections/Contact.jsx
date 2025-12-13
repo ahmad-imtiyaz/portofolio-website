@@ -45,7 +45,8 @@ const Contact = () => {
 
       setStatus({
         loading: false,
-        success: "Pesan berhasil dikirim. Kami akan menghubungi Anda segera.",
+        success:
+          "Pesan berhasil dikirim. Terimakasih telah menghubungi saya...",
         error: "",
       });
 

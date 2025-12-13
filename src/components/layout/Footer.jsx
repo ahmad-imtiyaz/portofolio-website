@@ -1,5 +1,6 @@
 // Modern Footer with animations and updated navigation
-import { useState } from "react";
+import { motivasiList } from "../../data/motivasi";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Github,
@@ -21,6 +22,18 @@ const Footer = () => {
   const isHomePage = location.pathname === "/";
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+
+  const [currentMotivasi, setCurrentMotivasi] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMotivasi((prev) =>
+        prev === motivasiList.length - 1 ? 0 : prev + 1
+      );
+    }, 10000); // 10 detik
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Navigation links matching Navbar
   const navLinks = [
@@ -50,19 +63,6 @@ const Footer = () => {
       label: "Email",
       color: "hover:bg-red-500",
     },
-  ];
-
-  // Home page sections for quick navigation
-  const homeSections = [
-    { id: "hero", label: "Hero" },
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "experience", label: "Experience" },
-    { id: "tech-timeline", label: "Tech Timeline" },
-    { id: "certificates", label: "Certificates" },
-    { id: "live-activity", label: "Live Activity" },
-    { id: "contact", label: "Contact" },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -153,31 +153,18 @@ const Footer = () => {
 
           {/* Home Sections Quick Nav */}
           <div>
-            <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-lg">
-              Home Sections
-            </h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              Quick navigation to sections
-            </p>
+            <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-6 bg-gradient-to-br from-white to-primary-50 dark:from-gray-800 dark:to-primary-900/10 transition-all">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 text-lg">
+                Motivasi Hari Ini
+              </h4>
 
-            <div className="grid grid-cols-2 gap-2">
-              {homeSections.map(({ id, label }) => (
-                <button
-                  key={id}
-                  onClick={() => {
-                    scrollToSection(id);
-                    setActiveSection(id);
-                    setTimeout(() => setActiveSection(null), 1000);
-                  }}
-                  className={`px-3 py-2 text-left rounded-lg border text-sm font-medium transition-all ${
-                    activeSection === id
-                      ? "bg-primary-100 dark:bg-primary-900/30 border-primary-500 text-primary-700 dark:text-primary-400"
-                      : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-400 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/10"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+              <p className="text-gray-700 dark:text-gray-300 italic leading-relaxed mb-4 transition-opacity duration-500">
+                “{motivasiList[currentMotivasi].quote}”
+              </p>
+
+              <span className="text-sm font-medium text-primary-600 dark:text-primary-400">
+                — {motivasiList[currentMotivasi].author}
+              </span>
             </div>
           </div>
 

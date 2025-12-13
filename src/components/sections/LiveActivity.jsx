@@ -131,44 +131,39 @@ const LiveActivity = () => {
           </div>
         </Card>
 
-        {/* Contribution Heatmap FIXED */}
+        {/* GitHub Contribution (SVG – Real Data) */}
         <Card className="p-8">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
             <Activity className="w-6 h-6 mr-2 text-primary-600" />
-            GitHub Contribution Heatmap (Last 12 Weeks)
+            GitHub Contributions (Last Year)
           </h3>
 
-          {/* GRID HEATMAP */}
-          <div className="grid grid-cols-12 gap-1">
-            {last84.map((date, i) => {
-              const count = map[date] || 0;
-              const color =
-                count === 0
-                  ? "bg-gray-300 dark:bg-gray-700"
-                  : count < 3
-                  ? "bg-green-300"
-                  : count < 7
-                  ? "bg-green-500"
-                  : "bg-green-700";
-
-              return (
-                <div
-                  key={i}
-                  className={`w-5 h-5 rounded ${color}`}
-                  title={`${count} contributions on ${date}`}
-                ></div>
-              );
-            })}
+          {/* Wrapper for smooth dark mode */}
+          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl">
+            <div className="w-full overflow-x-auto">
+              <img
+                src="https://ghchart.rshah.org/ahmad-imtiyaz"
+                alt="GitHub Contribution Chart"
+                className="w-full min-w-[700px] rounded-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          {/* Legend */}
-          <div className="flex items-center gap-2 mt-6 text-sm text-gray-500 dark:text-gray-400">
-            <span>Less</span>
-            <span className="h-4 w-4 bg-gray-300 dark:bg-gray-700 rounded"></span>
-            <span className="h-4 w-4 bg-green-300 rounded"></span>
-            <span className="h-4 w-4 bg-green-500 rounded"></span>
-            <span className="h-4 w-4 bg-green-700 rounded"></span>
-            <span>More</span>
+          {/* Footer + CTA */}
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Data sourced directly from GitHub • Updated automatically
+            </p>
+
+            <a
+              href="https://github.com/ahmad-imtiyaz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline font-medium"
+            >
+              View GitHub Profile →
+            </a>
           </div>
         </Card>
       </div>

@@ -147,7 +147,7 @@ const Projects = () => {
                   className="flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:underline"
                 >
                   <ExternalLink size={16} />
-                  <span>Live Demo</span>
+                  <span>Live Website</span>
                 </a>
               )}
               {selectedProject.githubUrl && (

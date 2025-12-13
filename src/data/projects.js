@@ -27,7 +27,7 @@ export const projects = [
     imageAlt:
       "Dashboard interface showing supplier ranking and analytics with decision support features",
     technologies: ["Laravel", "React", "TailwindCSS", "MySQL"],
-    liveUrl: "https://example.com",
+    // liveUrl: "https://example.com",
     githubUrl: "https://github.com/ahmad-imtiyaz/supplier-selection-ahp",
     category: "Decision / Enterprise Systems",
     featured: true,
@@ -59,7 +59,7 @@ export const projects = [
     imageAlt:
       "Smart café dashboard showing menu, ordering system, and AI chatbot interface for menu recommendations",
     technologies: ["TypeScript", "React", "TailwindCSS", "JavaScript", "JSON"],
-    liveUrl: "https://example.com",
+    // liveUrl: "https://example.com",
     githubUrl: "https://github.com/ahmad-imtiyaz/SmartCaf-/tree/master",
     category: "Web & Landing Pages",
     featured: false,
@@ -75,7 +75,7 @@ export const projects = [
     imageAlt:
       "HIMA website dashboard showing member monitoring, events, and financial tracking",
     technologies: ["PHP", "Bootstrap", "HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
+    // liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/web-hima-sti",
     category: "Internal & Management Systems",
     featured: false,
@@ -91,7 +91,7 @@ export const projects = [
     imageAlt:
       "Dashboard showing student exam results, rankings, and class management",
     technologies: ["PHP", "Bootstrap", "HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
+    // liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/web-sekolah-mandemak",
     category: "Internal & Management Systems",
     featured: false,
@@ -107,7 +107,7 @@ export const projects = [
     imageAlt:
       "Hotel dashboard showing room bookings, staff roles, and daily operations",
     technologies: ["Laravel", "Bootstrap", "Blade Template", "Vite"],
-    liveUrl: "#",
+    // liveUrl: "#",
     githubUrl: "https://github.com/ahmad-imtiyaz/web-joki-hotel",
     category: "Internal & Management Systems",
     featured: false,
@@ -139,7 +139,7 @@ export const projects = [
     imageAlt:
       "Dashboard showing asset management, maps, and ownership details for Kodam IV/Diponegoro",
     technologies: ["Node.js", "React", "TailwindCSS", "JavaScript"],
-    liveUrl: "asetkodam.com",
+    // liveUrl: "asetkodam.com",
     githubUrl: "https://github.com/Farhanrahardian/Aset-Kodam-IV-Diponegoro",
     category: "Internal & Management Systems",
     featured: false,
