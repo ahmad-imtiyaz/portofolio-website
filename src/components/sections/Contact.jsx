@@ -1,4 +1,3 @@
-// Contact form with Netlify Forms integration
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import SectionTitle from "../common/SectionTitle";
@@ -12,26 +11,65 @@ const Contact = () => {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({
+    loading: false,
+    success: "",
+    error: "",
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // 🔑 Encode data for Netlify
+  const encode = (data) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Message sent successfully!");
-    setTimeout(() => setStatus(""), 3000);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setStatus({ loading: true, success: "", error: "" });
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData,
+        }),
+      });
+
+      setStatus({
+        loading: false,
+        success: "Pesan berhasil dikirim. Kami akan menghubungi Anda segera.",
+        error: "",
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setStatus({
+        loading: false,
+        success: "",
+        error: "Terjadi kesalahan. Silakan coba lagi.",
+      });
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      text: "imtiyaznajih8@gmail.com",
-      href: "mailto:imtiyaznajih8@gmail.com",
+      text: "sobat.deadline@gmail.com",
+      href: "mailto:sobat.deadline@gmail.com",
     },
-    { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
+    {
+      icon: Phone,
+      text: "+62 821-4798-9872",
+      href: "tel:+6282147989872",
+    },
     {
       icon: MapPin,
       text: "Semarang, Gajah Mungkur",
@@ -44,7 +82,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Get In Touch"
-          subtitle="Let's work together on your next project"
+          subtitle="Siap berdiskusi dan berkolaborasi dengan Anda"
         />
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -55,8 +93,8 @@ const Contact = () => {
             </h3>
 
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Feel free to reach out for collaborations or just a friendly
-              hello. I'll get back to you as soon as possible!
+              Hubungi kami untuk kebutuhan layanan digital, akademik, maupun
+              kerja sama profesional.
             </p>
 
             <div className="space-y-6">
@@ -64,10 +102,10 @@ const Contact = () => {
                 <a
                   key={text}
                   href={href}
-                  className="flex items-center space-x-4 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="flex items-center space-x-4 text-gray-700 dark:text-gray-300 hover:text-primary-600 transition"
                 >
                   <div className="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-                    <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                    <Icon className="w-6 h-6 text-primary-600" />
                   </div>
                   <span className="text-lg">{text}</span>
                 </a>
@@ -85,101 +123,79 @@ const Contact = () => {
               onSubmit={handleSubmit}
               className="space-y-6"
             >
-              {/* Netlify Hidden Inputs */}
+              {/* Netlify Required */}
               <input type="hidden" name="form-name" value="contact" />
 
+              {/* Honeypot */}
               <p className="hidden">
                 <label>
-                  Don't fill this out: <input name="bot-field" />
+                  Don’t fill this out: <input name="bot-field" />
                 </label>
               </p>
 
               {/* Name */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Little Salsaurus"
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 
-                             dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 
-                             focus:border-transparent transition-colors outline-none"
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Nama Anda"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border"
+              />
 
               {/* Email */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="salsaurus@gmail.com"
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 
-                             dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 
-                             focus:border-transparent transition-colors outline-none"
-                />
-              </div>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Email aktif"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border"
+              />
 
               {/* Subject */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder="Project Inquiry"
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 
-                             dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 
-                             focus:border-transparent transition-colors outline-none"
-                />
-              </div>
+              <input
+                type="text"
+                name="subject"
+                required
+                placeholder="Subjek pesan"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border"
+              />
 
               {/* Message */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  placeholder="Tell me about your project..."
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 
-                             dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 
-                             focus:border-transparent transition-colors outline-none resize-none"
-                />
-              </div>
+              <textarea
+                name="message"
+                rows="5"
+                required
+                placeholder="Tuliskan pesan Anda..."
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 border resize-none"
+              />
 
-              {/* Submit Button */}
+              {/* Button */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 
-                           transition-colors font-medium flex items-center justify-center space-x-2"
+                disabled={status.loading}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition disabled:opacity-50"
               >
-                <span>Send Message</span>
+                {status.loading ? "Sending..." : "Send Message"}
                 <Send size={18} />
               </button>
 
-              {/* Status Message */}
-              {status && (
-                <p className="text-center text-green-600 dark:text-green-400 font-medium">
-                  {status}
+              {/* Status */}
+              {status.success && (
+                <p className="text-green-600 text-center font-medium">
+                  {status.success}
+                </p>
+              )}
+              {status.error && (
+                <p className="text-red-600 text-center font-medium">
+                  {status.error}
                 </p>
               )}
             </form>
