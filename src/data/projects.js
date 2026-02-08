@@ -155,7 +155,7 @@ export const projects = [
     imageAlt:
       "ASTRA web dashboard showing educational modules, digital skill courses, and student progress tracking",
     technologies: ["React", "TailwindCSS", "JavaScript"],
-    liveUrl: "https://progam-astra.netlify.app/",
+    liveUrl: "https://astra-web.netlify.app/",
     githubUrl: "https://github.com/ahmad-imtiyaz/ASTRA",
     category: "Web & Landing Pages",
     featured: true,
