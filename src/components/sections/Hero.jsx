@@ -21,26 +21,6 @@ const socialLinks = [
   { icon: Mail, href: "mailto:imtiyaznajih8@gmail.com", label: "Email" },
 ];
 
-// 4-corner text labels
-const cornerLabels = {
-  topLeft: {
-    main: "Ahmad",
-    sub: "Full-Stack Dev",
-  },
-  topRight: {
-    main: "Since 2022",
-    sub: "Crafting Code",
-  },
-  bottomLeft: {
-    main: "10+ Projects",
-    sub: "Shipped & Alive",
-  },
-  bottomRight: {
-    main: "Najih",
-    sub: "Backend Engineer",
-  },
-};
-
 // Stacked polaroid photo model
 const PolaroidStack = () => {
   const [topIndex, setTopIndex] = useState(0);
@@ -65,7 +45,7 @@ const PolaroidStack = () => {
 
   return (
     <div
-      className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] mx-auto"
+      className="relative w-full max-w-[420px] mx-auto"
       style={{ perspective: "1200px" }}
       onMouseEnter={() => setFlipping(true)}
       onMouseLeave={() => setFlipping(false)}
@@ -88,6 +68,7 @@ const PolaroidStack = () => {
             />
           </div>
         </div>
+        {/* Tape */}
         <div
           className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-yellow-200/70 rotate-[-4deg] shadow-sm backdrop-blur-sm"
           aria-hidden="true"
@@ -126,9 +107,11 @@ const PolaroidStack = () => {
                 draggable={false}
               />
             </AnimatePresence>
+            {/* Subtle gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
+        {/* Tape */}
         <div
           className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-yellow-200/70 rotate-[3deg] shadow-sm backdrop-blur-sm"
           aria-hidden="true"
@@ -171,32 +154,10 @@ const PolaroidStack = () => {
   );
 };
 
-// Single corner label — main (big) + sub (small)
-const CornerLabel = ({ main, sub, align = "left", dominant = false }) => (
-  <div className={`flex flex-col ${align === "right" ? "items-end text-right" : "items-start text-left"}`}>
-    {dominant ? (
-      <GradientText
-        animationSpeed={6}
-        yoyo
-        className="!inline-block font-extrabold leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-      >
-        {main}
-      </GradientText>
-    ) : (
-      <span className="font-extrabold leading-[0.95] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white/90">
-        {main}
-      </span>
-    )}
-    <span className="mt-1 text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.2em] text-white/50">
-      {sub}
-    </span>
-  </div>
-);
-
 const Hero = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center px-4 py-12 sm:py-16 md:py-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {/* WebGL Gradient Waves Background */}
@@ -233,218 +194,138 @@ const Hero = () => {
       />
 
       <div className="relative max-w-7xl mx-auto w-full">
-        {/* Badge above everything (mobile + desktop) */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-6 sm:mb-8 md:mb-10"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-xs sm:text-sm font-medium">
-            <span className="relative w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
-            Backend Developer • Laravel & React
-          </span>
-        </motion.div>
-
-        {/* Hidden h1 for a11y (reads full name) */}
-        <h1 id="hero-heading" className="sr-only">
-          Ahmad Imtiyaz Najih — Backend Developer
-        </h1>
-
-        {/* 4-corner grid with photo center */}
-        <div className="relative">
-          {/* Desktop / tablet grid (≥md): 2-col, photo in center-right */}
-          <div className="hidden md:grid md:grid-cols-2 md:gap-x-8 lg:gap-x-12 md:items-center">
-            {/* Left column: TL dominant + BL sub */}
+        {/* Mobile: stack photo on top, text below. Desktop: side by side (text-left, photo-right) */}
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text Content */}
+          <motion.div
+            className="space-y-8 lg:space-y-10 w-full"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+            }}
+          >
+            {/* Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col justify-between gap-10 lg:gap-16 py-4"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+              }}
             >
-              <CornerLabel
-                main={cornerLabels.topLeft.main}
-                sub={cornerLabels.topLeft.sub}
-                align="left"
-                dominant
-              />
-              <CornerLabel
-                main={cornerLabels.bottomLeft.main}
-                sub={cornerLabels.bottomLeft.sub}
-                align="left"
-                dominant={false}
-              />
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 text-sm font-medium">
+                <span className="relative w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
+                Backend Developer • Laravel & React
+              </span>
             </motion.div>
 
-            {/* Right column: photo + TR/BR labels flanking */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="relative flex items-center justify-center"
+            {/* Name — two colors */}
+            <motion.h1
+              id="hero-heading"
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+              }}
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.05] tracking-tight"
             >
-              {/* Top-right label absolutely positioned above photo */}
-              <div className="absolute -top-4 -right-2 lg:right-0 z-10">
-                <CornerLabel
-                  main={cornerLabels.topRight.main}
-                  sub={cornerLabels.topRight.sub}
-                  align="right"
-                  dominant={false}
-                />
-              </div>
-              {/* Bottom-right label absolutely positioned below photo */}
-              <div className="absolute -bottom-4 -right-2 lg:right-0 z-10">
-                <CornerLabel
-                  main={cornerLabels.bottomRight.main}
-                  sub={cornerLabels.bottomRight.sub}
-                  align="right"
-                  dominant
-                />
-              </div>
+              <span className="block text-white">Hi, I'm</span>
+              <span className="block mt-1">
+                <GradientText
+                  colors={["#6366f1", "#a78bfa", "#ec4899", "#6366f1"]}
+                  animationSpeed={5}
+                  yoyo
+                  className="!inline"
+                >
+                  Ahmad Imtiyaz Najih
+                </GradientText>
+              </span>
+            </motion.h1>
 
-              <PolaroidStack />
-            </motion.div>
-          </div>
-
-          {/* Mobile (<md): vertical stack */}
-          <div className="md:hidden flex flex-col items-center gap-6">
-            {/* TL + TR row */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="w-full flex justify-between items-start gap-4"
+            {/* Subtitle */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+              }}
+              className="text-lg md:text-xl lg:text-2xl text-white/70 leading-relaxed max-w-xl font-light"
             >
-              <CornerLabel
-                main={cornerLabels.topLeft.main}
-                sub={cornerLabels.topLeft.sub}
-                align="left"
-                dominant
-              />
-              <CornerLabel
-                main={cornerLabels.topRight.main}
-                sub={cornerLabels.topRight.sub}
-                align="right"
-                dominant={false}
-              />
+              I build clean, scalable backend systems with{" "}
+              <strong className="text-white font-medium">Laravel</strong> &{" "}
+              <strong className="text-white font-medium">React</strong>. Turning complex problems into
+              maintainable APIs and reliable web applications.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+              }}
+              className="flex flex-wrap gap-4"
+            >
+              <ClickSpark sparkColor="#a78bfa" sparkSize={8} sparkRadius={20} sparkCount={10} duration={450}>
+                <motion.a
+                  href="#projects"
+                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-500 via-primary-600 to-violet-600 text-white rounded-2xl font-semibold text-lg shadow-xl shadow-primary-500/40 hover:shadow-primary-500/60 transition-all duration-300 border border-white/10"
+                >
+                  View My Work
+                  <ArrowRight
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                    aria-hidden="true"
+                  />
+                </motion.a>
+              </ClickSpark>
+
+              <ClickSpark sparkColor="#ffffff" sparkSize={8} sparkRadius={18} sparkCount={8} duration={400}>
+                <motion.a
+                  href="#contact"
+                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white/20 text-white/90 rounded-2xl font-semibold text-lg bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                >
+                  Get In Touch
+                </motion.a>
+              </ClickSpark>
             </motion.div>
 
-            {/* Photo center */}
+            {/* Social Links */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.96, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-              className="w-full flex justify-center py-2"
+              variants={{
+                hidden: { opacity: 0, y: 24 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "backOut" } },
+              }}
+              className="flex items-center gap-3 pt-2"
             >
-              <PolaroidStack />
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  whileHover={{ scale: 1.15, rotate: 12 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-white/15 hover:border-white/30 transition-all duration-300"
+                >
+                  <Icon size={22} />
+                </motion.a>
+              ))}
             </motion.div>
+          </motion.div>
 
-            {/* BL + BR row */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="w-full flex justify-between items-start gap-4"
-            >
-              <CornerLabel
-                main={cornerLabels.bottomLeft.main}
-                sub={cornerLabels.bottomLeft.sub}
-                align="left"
-                dominant={false}
-              />
-              <CornerLabel
-                main={cornerLabels.bottomRight.main}
-                sub={cornerLabels.bottomRight.sub}
-                align="right"
-                dominant
-              />
-            </motion.div>
-          </div>
+          {/* Polaroid Stack */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            className="relative w-full flex justify-center lg:justify-end pb-16 lg:pb-0"
+          >
+            <PolaroidStack />
+          </motion.div>
         </div>
-
-        {/* Bio + CTAs + Socials (below the grid, both breakpoints) */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.4 } },
-          }}
-          className="mt-10 sm:mt-12 md:mt-16 flex flex-col items-center text-center max-w-3xl mx-auto gap-6"
-        >
-          <motion.p
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-            }}
-            className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed font-light px-2"
-          >
-            Student passionate about full-stack web & mobile development. Building scalable apps
-            with{" "}
-            <strong className="text-white font-medium">Laravel</strong>,{" "}
-            <strong className="text-white font-medium">React</strong> &{" "}
-            <strong className="text-white font-medium">Flutter</strong>, while exploring AI-assisted
-            coding to ship faster and cleaner.
-          </motion.p>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-            }}
-            className="flex flex-wrap justify-center gap-3 sm:gap-4"
-          >
-            <ClickSpark sparkColor="#a78bfa" sparkSize={8} sparkRadius={20} sparkCount={10} duration={450}>
-              <motion.a
-                href="#projects"
-                whileHover={{ scale: 1.03, y: -3 }}
-                whileTap={{ scale: 0.97 }}
-                className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary-500 via-primary-600 to-violet-600 text-white rounded-2xl font-semibold text-sm sm:text-base md:text-lg shadow-xl shadow-primary-500/40 hover:shadow-primary-500/60 transition-all duration-300 border border-white/10"
-              >
-                View My Work
-                <ArrowRight
-                  className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300"
-                  aria-hidden="true"
-                />
-              </motion.a>
-            </ClickSpark>
-
-            <ClickSpark sparkColor="#ffffff" sparkSize={8} sparkRadius={18} sparkCount={8} duration={400}>
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.03, y: -3 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/20 text-white/90 rounded-2xl font-semibold text-sm sm:text-base md:text-lg bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-white/30 transition-all duration-300"
-              >
-                Get In Touch
-              </motion.a>
-            </ClickSpark>
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-            }}
-            className="flex items-center gap-3 pt-1"
-          >
-            {socialLinks.map(({ icon: Icon, href, label }) => (
-              <motion.a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                whileHover={{ scale: 1.15, rotate: 12 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="p-2.5 sm:p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-white/15 hover:border-white/30 transition-all duration-300"
-              >
-                <Icon size={20} className="sm:w-[22px] sm:h-[22px]" />
-              </motion.a>
-            ))}
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
