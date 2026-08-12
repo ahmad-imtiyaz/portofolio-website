@@ -5,7 +5,7 @@ import './GradientText.css';
 const GradientText = ({
   children,
   className = '',
-  colors = ['#5227FF', '#FF9FFC', '#B497CF'],
+  colors, // optional override; defaults to theme CSS vars
   animationSpeed = 8,
   showBorder = false,
   direction = 'horizontal',
@@ -69,7 +69,9 @@ const GradientText = ({
 
   const gradientAngle =
     direction === 'horizontal' ? 'to right' : direction === 'vertical' ? 'to bottom' : 'to bottom right';
-  const gradientColors = [...colors, colors[0]].join(', ');
+  // Theme-aware palette: read from CSS vars if no explicit colors passed.
+  const defaultColors = ['var(--grad-1)', 'var(--grad-2)', 'var(--grad-3)', 'var(--grad-1)'];
+  const gradientColors = [...(colors || defaultColors), (colors ? colors[0] : 'var(--grad-1)')].join(', ');
 
   const gradientStyle = {
     backgroundImage: `linear-gradient(${gradientAngle}, ${gradientColors})`,

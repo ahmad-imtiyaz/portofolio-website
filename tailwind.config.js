@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['"Space Grotesk"', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
         body: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       colors: {

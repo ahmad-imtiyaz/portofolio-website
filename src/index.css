@@ -1,4 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Gradient palette — light theme (deeper, saturated for contrast on white) */
+  --grad-1: #4338CA; /* indigo-700 */
+  --grad-2: #7C3AED; /* violet-600 */
+  --grad-3: #DB2777; /* pink-600 */
+  --grad-4: #4338CA;
+}
+
+.dark {
+  /* Gradient palette — dark theme (lighter, neon-ish for glow on dark bg) */
+  --grad-1: #818CF8; /* indigo-400 */
+  --grad-2: #A78BFA; /* violet-400 */
+  --grad-3: #F472B6; /* pink-400 */
+  --grad-4: #818CF8;
+}
 
 @tailwind base;
 @tailwind components;
@@ -83,22 +99,32 @@ html {
   @apply bg-gray-500 dark:bg-gray-500;
 }
 
-/* Gradient text utility */
+/* Gradient text utility — theme aware via CSS vars */
 .gradient-text {
-  @apply bg-gradient-to-r from-primary-500 via-accent-500 to-pink-500 bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--grad-1),
+    var(--grad-2),
+    var(--grad-3),
+    var(--grad-4)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Gradient border utility */
 .gradient-border {
   position: relative;
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7, #EC4899) border-box;
+    linear-gradient(135deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4)) border-box;
   border: 2px solid transparent;
 }
 
 .dark .gradient-border {
   background: linear-gradient(#0F0F1A, #0F0F1A) padding-box,
-    linear-gradient(135deg, #6366F1, #8B5CF6, #A855F7, #EC4899) border-box;
+    linear-gradient(135deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4)) border-box;
 }
 
 /* Focus visible */
