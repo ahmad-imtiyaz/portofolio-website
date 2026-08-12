@@ -1,0 +1,15 @@
+.scroll-reveal {
+  margin: 0;
+  font-family: inherit;
+}
+
+.scroll-reveal-text {
+  margin: 0;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.scroll-reveal .word {
+  display: inline-block;
+  will-change: opacity, filter;
+}
