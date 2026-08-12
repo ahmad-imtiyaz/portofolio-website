@@ -11,3 +11,22 @@ docs/
 
 # OS
 .DS_Store
+
+# env / secrets
+.env
+.env.local
+.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+dev.log
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# agent / local artifacts
+.pi/
+*.tmp
